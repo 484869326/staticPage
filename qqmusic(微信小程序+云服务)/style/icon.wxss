@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2875761 */
+  src: url('//at.alicdn.com/t/font_2875761_72y10n2n09m.woff2?t=1635251546238') format('woff2'),
+       url('//at.alicdn.com/t/font_2875761_72y10n2n09m.woff?t=1635251546238') format('woff'),
+       url('//at.alicdn.com/t/font_2875761_72y10n2n09m.ttf?t=1635251546238') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-24gl-playlistMusic4:before {
+  content: "\ea72";
+}
+
+.icon-bofang1:before {
+  content: "\e624";
+}
+
+.icon-zanting:before {
+  content: "\e67a";
+}
+
+.icon-dacha:before {
+  content: "\e711";
+}
+
+.icon-dianzan:before {
+  content: "\e600";
+}
+
+.icon-play-list-fill:before {
+  content: "\e72f";
+}
+
+.icon-24gf-pauseCircle:before {
+  content: "\ea81";
+}
+
+.icon-24gf-playCircle:before {
+  content: "\ea82";
+}
+
+.icon-shouye:before {
+  content: "\e8c6";
+}
+
+.icon-slide-left:before {
+  content: "\e636";
+}
+
+.icon-gantanhao-xianxingyuankuang:before {
+  content: "\e8ec";
+}
+
+.icon-wechat:before {
+  content: "\e695";
+}
+
+.icon-bofang:before {
+  content: "\e87c";
+}
+
+.icon-slide-right:before {
+  content: "\e635";
+}
+
+.icon-sousuo:before {
+  content: "\e679";
+}

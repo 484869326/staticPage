@@ -1,0 +1,91 @@
+page{
+    background-color: rgb(250, 250, 250);
+}
+.active{
+    color: black;
+    font-size: 40rpx;
+    font-weight: 600;
+}
+.active::after{
+    content: '';
+    width: 90%;
+    border-radius: 5rpx;
+    left: -2rpx;
+    bottom: 1rpx;
+    z-index: -1;
+    border:8rpx solid #22D59C;
+    position: absolute;
+}
+.tabbar{
+    width: 100vw;
+    align-items: flex-end;
+    position: fixed;
+    background-color: #FAFAFA;
+    z-index: 2;
+    padding: 30rpx;
+    display: flex;
+    color: #646464;
+}
+.tabbar_recommend{
+   position: relative;
+   text-align: center;
+   margin-right: 40rpx;
+}
+.content{
+    padding: 100rpx 0 0;
+    height: 100vh;
+    white-space: nowrap;
+}
+.content .recommend_list{
+    /* height: 100vh; */
+    overflow: auto;
+    white-space: normal;
+    padding: 0 30rpx;
+    display: inline-block;
+}
+.recommend_list .recommend_item{
+    position: relative;
+    margin-bottom: 35rpx;
+    display: inline-block;
+    border-radius: 15rpx;
+    overflow: hidden;
+    width: 49%;
+    margin-right: 2%;
+}
+
+.recommend_list .recommend_item:nth-child(even){
+    margin-right: 0;
+
+}
+.recommend_plain{
+    overflow: hidden;
+    height: 70rpx;
+    font-size: 26rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.recommend_message{
+    position: absolute;
+    width: 100%;
+    bottom: 90rpx;
+    left: 0;
+    padding: 0rpx 15rpx 5rpx;
+    height: 30rpx;
+    z-index: 1;
+    font-size: 20rpx;
+    color: white;
+}
+.icon-bofang{
+    font-size: 12rpx;
+    padding: 7rpx 10rpx;
+    vertical-align: middle;
+    border: 1px solid #ffff;
+    margin-right: 5rpx;
+    border-radius: 10rpx;
+}
+.time{
+    float: right;
+}
+.recommend_list_scroll{
+    height: 100vh;
+}

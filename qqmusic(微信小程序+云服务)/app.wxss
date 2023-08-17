@@ -1,0 +1,9 @@
+@import "./style/icon.wxss";
+view,button,image,text,scroll-view,swiper,swiper-item{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+image{
+    width: 100%;
+}

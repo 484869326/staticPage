@@ -1,0 +1,94 @@
+/* pages/default/default.wxss */
+page{
+    background-image: url(https://img01.sogoucdn.com/app/a/100540022/2021102322150198896318.jpg);
+    background-size: 100% 100%;
+}
+.content{
+    position: absolute;
+    width: 75%;
+    top: 70%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    /* background-color: pink; */
+}
+.login{
+    background-color: #76E190;
+    color: #FAFDFF;
+    padding: 18rpx 0;
+    border-radius: 80rpx;
+}
+checkbox .wx-checkbox-input {
+    transform: scale(0.6,0.6);
+    border: 1px solid #AC9B9B;
+    background-color: transparent;
+  }
+  checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+    color: #AC9B9B;
+  }
+  .checkbox{
+      font-size: 23rpx;
+      color: #AC9B9B;
+      margin-top: 20rpx;
+      margin-bottom: 60rpx;
+  }
+  .tips_checkbox{
+    animation: vibrate ease 1s;
+  }
+  @keyframes vibrate {
+      0% {
+          transform: translate(-10px)
+      }
+      10%{
+        transform: translate(0px)
+      }
+      20% {
+        transform: translate(-10px)
+    }
+    30%{
+      transform: translate(0px)
+    }
+    40% {
+        transform: translate(-10px)
+    }
+    50%{
+      transform: translate(0px)
+    }
+    60% {
+        transform: translate(-10px)
+    }
+    70%{
+      transform: translate(0px)
+    }
+    80% {
+        transform: translate(-10px)
+    }
+    90%{
+      transform: translate(0px)
+    }
+      100% {
+          transform: translate(0px)
+      }
+  }
+  .tips{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 30rpx 10rpx;
+      transform: translate(-50%,-50%);
+      width: 350rpx;
+      height: 250rpx;
+      font-size: 26rpx;
+      color: white;
+      text-align: center;
+      background-color: rgba(0,0,0,.7);
+      border-radius: 15rpx;
+  }
+  .tips view{
+      margin-bottom: 5rpx;
+  }
+  .tips .icon-gantanhao-xianxingyuankuang{
+      font-size: 52rpx;
+      color: #C1665E;
+      margin-bottom: 15rpx;
+  }

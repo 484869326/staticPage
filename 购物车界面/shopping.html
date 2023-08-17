@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/shopping.css"/>
+	</head>
+	<body>
+		<div id="app">
+			<div class="top">
+				<div class="shop_title">
+					<h2>购物车({{totalnum}})</h2>
+					<div v-if="this.goods.length!=0">
+						<span v-if="this.delete" @click="changeDelete">完成</span>
+						<span v-on:click="changeDelete" v-else="this.delete">管理</span>
+					</div>
+				</div>
+				<div :class="{head_bar:true,head_bar1:this.goods.length==0}">
+					<p  v-if="this.goods.length!=0">共({{totalnum}})件宝贝</p>
+				</div>
+				
+			</div>
+			<div class="shop_none" v-if="this.goods.length==0">
+				<img src="img/shop_none_.webp" >
+				<p>购物车竟然是空的！</p>
+				<p>再忙，也要记得买点什么犒赏自己-</p>
+			</div>
+			<div class="content" v-else="this.goods.length">
+			<div class="adv" v-if="this.hide">
+				<p>开淘宝省钱卡，领91元通用红包！</p>
+				<span @click="Hide()">x</span>
+			</div>
+				<ul>
+					<li v-for="(v,i) in goods">
+						<div class="top">
+							<input type="checkbox" v-model="v.store_all" @click="storeAll(i)" />
+							<img :src="v.logoImg">
+							<span>{{v.name}}></span>
+							<p>领劵</p>
+						</div>
+						<div class="bottom" v-for="(v1,i1) in v.deTail">
+							<div class="goods_check">
+								<input type="checkbox" v-model="v1.checked" />
+							</div>
+							<img :src="v1.src">
+							<div class="goods_detail">
+								<p>{{v1.text}}</p>
+								<p>{{v1.type}}</p>
+								<p style="color: red;">￥{{v1.price}}</p>
+								<div>
+									<input type="button" value="-" class="number_reduce" v-on:click="changeNum(i,i1,-1)"
+										:disabled="v1.num==1" />
+									<input type="text" class="number" :value="v1.num" />
+									<input type="button" value="+" class="number_add" v-on:click="changeNum(i,i1,1)" />
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="goods_price" v-if="this.goods.length!=0">
+				<div class="left">
+					<input type="checkbox" v-model="all_checked" v-on:click="flag=true" />
+					<span>全选</span>
+				</div>
+				<div class="right" v-if="this.delete">
+					<button type="button" class="delete" v-on:click="deleteShop()">删除</button>
+				</div>
+				<div class="right" v-else="this.delete">
+					<span>合计</span>
+					<span>￥{{total}}</span>
+					<button type="button" :class="{total:true,active:num>0}">结算({{num}})</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		new Vue({
+				el: "#app",
+				data: {
+					delete:false,
+					// 隐藏广告
+					hide:true,
+					// 页面购物商品数量
+					totalnum:0,
+					// 全选长度
+					store_length: 0,
+					// 商店全选第三方变量
+					store_all: 0,
+					//被选中的商店全选
+					store_one: 0,
+					// 数量
+					num: 0,
+					// 总价
+					total: 0,
+					// 避免全选 侦听
+					flag: false,
+					// 全选
+					all_checked: false,
+					goods: [{
+							name: "探索有趣",
+							logoImg: "img/store_logo01.webp",
+							store_all: false,
+							deTail: [{
+									src: "img/goods01.webp",
+									text: "帆布包女夏日系哆啦A梦动漫ins小清新单肩简约学生上课包包女2021",
+									type: "尺寸：33*38cm哆啦A梦10号拉链内[袋款]",
+									checked: false,
+									price: 29.9,
+									num: 1
+								},
+								{
+									src: "img/goods01_02.webp",
+									text: "哈士奇网红抱枕狗头靠枕圣诞节男生礼物搞怪二哈可爱沙发床头靠垫",
+									type: "【不屑;70cm】",
+									price: 77.5,
+									num: 1,
+									checked: false
+								}
+							]
+						},
+						{
+							name: "敬修堂居家日用旗",
+							logoImg: "img/store_logo02.webp",
+							store_all: false,
+							deTail: [{
+								src: "img/goods02.webp",
+								text: "【家装节价】白云山敬修堂眼贴缓解眼疲劳保护视力青少年中药眼睛贴冰敷护眼贴",
+								type: "【拍2更划算】1盒30对装",
+								price: 78,
+								num: 1,
+								checked: false,
+							}]
+						},
+					],
+				},
+				methods: {
+					changeNum: function(i, i1, num) {
+						this.goods[i].deTail[i1].num += num;
+					},
+					storeAll: function(i) {
+						for(i1 in this.goods[i].deTail){
+							this.goods[i].deTail[i1].checked=!this.goods[i].store_all;
+						}
+					},
+					Hide:function(){
+						this.hide=false;
+					},
+					changeDelete:function(){
+						this.delete=!this.delete;
+					},
+					deleteShop:function(){
+						if(this.goods.length){
+							this.all_checked=false;
+						}
+						for(var i=0;i<this.goods.length;i++){
+							if(this.goods[i].store_all){
+								this.goods.splice(i,1);
+								i--;
+							}
+							else{
+								for(var i1=0;i1<this.goods[i].deTail.length;i1++){
+									if(this.goods[i].deTail[i1].checked){
+										this.goods[i].deTail.splice(i1,1);
+										i1--;
+								 }
+								}
+							}
+						}
+					}
+				},
+				watch: {
+					goods: {
+						handler() {
+							this.num = 0;
+							this.store_all = 0;
+							this.total = 0;
+							this.store_length = 0;
+							for (i in this.goods) {
+								this.store_one = 0;
+								this.store_length += this.goods[i].deTail.length;
+								for (i1 in this.goods[i].deTail) {
+									if (this.goods[i].deTail[i1].checked) {
+										this.num++;
+										this.total += this.goods[i].deTail[i1].price * this.goods[i].deTail[i1].num;
+										this.store_all++;
+										this.store_one++;
+										if (this.store_one == this.goods[i].deTail.length) {
+											this.goods[i].store_all = true;
+										}
+										if (this.store_all == this.store_length) {
+											this.all_checked = true;
+										}
+									} else {
+										this.all_checked = false;
+										this.flag = false;
+										this.goods[i].store_all = false;
+									}
+								}
+							}
+						},
+						deep: true
+					},
+					all_checked: function() {
+						if (this.flag) {
+							for (i in this.goods) {
+								for (i1 in this.goods[i].deTail) {
+									this.goods[i].deTail[i1].checked = this.all_checked;
+								}
+							}
+						}
+					},
+					totalnum:function(){
+						this.totalnum=0;
+						for (i in this.goods) {
+							for (i1 in this.goods[i].deTail){
+								this.totalnum++;
+							}
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

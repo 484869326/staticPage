@@ -1,0 +1,67 @@
+page{
+    background-color: rgb(250, 250, 250);
+}
+.search{
+    margin-top: 20rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.searchValue{
+    position: relative;
+    flex: 8;
+    padding:10rpx 0rpx;
+    margin:10rpx 20rpx;
+    background-color: #fff;
+    border-radius: 50rpx;
+    display: flex;
+    align-items: center;
+}
+.searchContent{
+  flex: 8;
+    font-size: 28rpx;
+}
+.icon-sousuo{
+    flex: 1;
+    font-size: 38rpx;
+    color: #80A2CE;
+    text-align: center;
+}
+.hidden{
+    flex: 1;
+    font-size: 28rpx;
+}
+.icon-dacha{
+    flex: 1;
+    text-align: center;
+}
+.search_tip{
+    margin: 40rpx 20rpx;
+    font-size: 36rpx;
+    overflow: hidden;
+    color: #22D59C;
+}
+.search_list{
+    margin: 0rpx 20rpx 50rpx;
+    display: flex;
+}
+.search_name{
+    flex: 16;
+}
+.history_search{
+    margin: 40rpx 20rpx;
+    font-size: 36rpx;
+}
+.history_text{
+    margin: 0rpx 20rpx;
+    overflow: hidden;
+}
+.text_list{
+    float: left;
+    padding: 10rpx 20rpx;
+    font-size: 24rpx;
+    background-color: white;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    border-radius: 50rpx;
+}

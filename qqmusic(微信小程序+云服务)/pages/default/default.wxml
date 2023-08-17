@@ -1,0 +1,38 @@
+<view class="content">
+    <view class="login" bindtap="isLogin">
+    <text class="iconfont icon-wechat"></text> 微信登录
+    </view>
+    <view class="check">
+  <checkbox-group bindchange="checkboxChange">
+        <checkbox value="true" checked="{{checked}}" color="#AE9C9C" class="checkbox {{tips?'tips_checkbox':''}}">同意《用户许可协议》和《QQ音乐隐私保护指引》
+    </checkbox>
+  </checkbox-group>
+    
+    </view>
+    <view style="font-size:22rpx;color:#B29C9C;">
+        QQ与微信账号的资产和权限不互通
+    </view>
+      <view style="font-size:22rpx;color:#B29C9C;">
+          使用QQ账号登录时，将获取您的账号信息和好友关系
+      </view>
+</view>
+    <view class="tips" wx:if="{{tips}}">
+    <view class="iconfont icon-gantanhao-xianxingyuankuang">
+        
+    </view>
+      
+    <view>
+        请先勾选页面下方的"同
+    </view>
+      <view>
+          意"《用户许可协议》
+      </view>
+        
+    <view>
+        《QQ音乐隐私保护指引》"
+    </view>
+      
+    </view>
+  
+  
+  

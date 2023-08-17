@@ -1,0 +1,30 @@
+<search top="{{top}}"/>
+<view class="search">
+<view class="searchValue">
+    <text class="iconfont icon-sousuo"></text>
+   <input bindblur="blur" bindfocus="focus" bindinput="getValue" value="{{value}}" class="searchContent"  type="text"  placeholder="搜索 音乐/视频/歌手/歌单/电台" bindconfirm='search'></input>
+   <text bindtap="clear" class="iconfont icon-dacha" hidden="{{hidden}}"></text>
+</view>
+   <text class="hidden" hidden="{{hidden}}" bindtap="clear">取消</text>
+</view>
+<block wx:if="{{hidden}}">
+   <view class="history_search">
+       历史搜索
+   </view>
+     <view class="history_text">
+         <text class="text_list" wx:for="{{History}}">{{item}}</text>
+     </view>
+       
+</block>
+  
+<block wx:if="{{input}}">
+    <view class="search_tip">
+  搜索“{{newValue}}”
+</view>
+<view class="search_list" wx:for="{{inputValue}}">
+    <text class="iconfont icon-sousuo"></text>
+     <text class="search_name">{{item}}</text>
+</view>
+</block>
+  
+  

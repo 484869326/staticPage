@@ -1,0 +1,163 @@
+<view class="play" hidden="{{navBarMusic}}" catchtap="handleReturn">
+ <view class="play_img">
+    <image class="" src="{{Detail.src}}" mode="widthFix"  class="{{state?'animation':''}}"/>
+ </view>
+  <view class="play_name">
+      {{Detail.name}}
+  </view>  
+   <view class="play_button">
+    <text class="iconfont {{state?'icon-zanting':'icon-bofang1'}}" catchtap="play"></text>
+    <text class="iconfont icon-play-list-fill"></text>
+   </view>
+     
+</view>
+  
+<navigator class="search" url="../search/search">
+    <view class="iconfont icon-sousuo">
+        <text>  搜索</text>
+    </view>
+</navigator>
+<view class="recommend">
+    <view class="recommend_wrap">
+         <view class="recommend_title">
+        歌曲推荐
+    </view>
+      <view class="recommend_more">
+          更多<text class="iconfont icon-slide-right"></text>
+      </view>
+    </view>
+      <view class="recommend_list" wx:for="{{list}}" wx:key="id" bindtap="handleDetail" data-id="{{item.id}}">
+         <view class="recommend_list_left">
+              <image class="" src="{{item.src}}" mode="widthFix"  />
+         </view>
+           
+            <view class="recommend_list_center">
+                <view class="recommend_list_title">
+                    {{item.name}}
+                </view>
+                 <view class="recommend_plain">
+                    <text>SQ</text>{{item.author}}・{{item.name}}
+                </view>  
+            </view>
+              <view class="recommend_list_right">
+                  <text class="iconfont icon-slide-right"></text>
+              </view>
+                
+      </view>
+        
+</view>
+<view class="hot">
+    <view class="hot_wrap">
+         <view class="hot_title">
+        热门歌单
+    </view>
+      <view class="hot_more">
+          更多<text class="iconfont icon-slide-right"></text>
+      </view>
+    </view>
+    <scroll-view class="hot_list" scroll-x="true">
+        <view  class="hot_list_content" wx:for="{{hotsongSheet}}" wx:key="id">
+            <view class="hot_list_image">
+        <image class="" src="{{item.cover}}" mode="widthFix"/>
+                 <view><text class="iconfont icon-bofang"></text>{{item.cnt}}</view>
+            </view>
+         {{item.title}}
+        </view>
+    </scroll-view>
+      
+</view>
+
+<view class="official">
+    <view class="official_wrap">
+         <view class="official_title">
+        官方歌单
+    </view>
+      <view class="official_more">
+          更多<text class="iconfont icon-slide-right"></text>
+      </view>
+    </view>
+    <scroll-view class="official_list" scroll-x="true">
+        <view  class="official_list_content" wx:for="{{officialsongSheet}}" wx:key="id">
+            <view class="official_list_image">
+        <image class="" src="{{item.cover}}" mode="widthFix"  />
+              <view><text class="iconfont icon-bofang"></text>{{item.cnt}}</view>
+            </view>
+         {{item.title}}
+        </view>
+         
+    </scroll-view>
+      
+</view>
+<view class="peak">
+    <view class="peak_title">
+        巅峰榜
+    </view>
+      <view class="soar">
+          <view class="soar_item">
+          <view class="soar_item_title">
+            飙升榜
+          </view>
+             <view>
+                <text>1.这就是爱</text><text>-张杰111111</text>
+             </view>
+                 <view>
+                               <text>1.这就是爱</text><text>-张杰111111</text>
+             </view>
+               <view>
+                                               <text>1.这就是爱</text><text>-张杰111111</text>
+
+             </view>
+          </view>
+            <view class="soar_img">
+             <image class="" src="https://qpic.y.qq.com/music_cover/MKjEtF7diatibd6B0iaeF5KguYHTWhScOADLtR9xjUjEEz5uYMCCKOA9w/300?n=1" mode="widthFix" />
+               <view><text class="iconfont icon-bofang"></text>204.7万</view>
+          </view>
+      </view>
+          <view class="soar">
+          <view class="soar_item">
+          <view class="soar_item_title">
+            热歌榜
+          </view>
+             <view>
+                                            <text>1.这就是爱</text><text>-张杰111111</text>
+
+             </view>
+                 <view>
+                                              <text>1.这就是爱</text><text>-张杰111111</text>
+
+             </view>
+               <view>
+                                              <text>1.这就是爱</text><text>-张杰111111</text>
+
+             </view>
+          </view>
+            <view class="soar_img">
+             <image class="" src="https://qpic.y.qq.com/music_cover/MKjEtF7diatibd6B0iaeF5KguYHTWhScOADLtR9xjUjEEz5uYMCCKOA9w/300?n=1" mode="widthFix" />
+               <view><text class="iconfont icon-bofang"></text>204.7万</view>
+          </view>
+      </view>
+        <view class="soar">
+          <view class="soar_item">
+          <view class="soar_item_title">
+            新歌榜
+          </view>
+             <view>
+                                              <text>1.这就是爱</text><text>-张杰111111</text>
+
+             </view>
+                 <view>
+                                              <text>1.这就是爱</text><text>-张杰111111</text>
+
+             </view>
+               <view>
+                                             <text>1.这就是爱</text><text>-张杰111111</text>
+
+             </view>
+          </view>
+            <view class="soar_img">
+             <image class="" src="https://qpic.y.qq.com/music_cover/MKjEtF7diatibd6B0iaeF5KguYHTWhScOADLtR9xjUjEEz5uYMCCKOA9w/300?n=1" mode="widthFix" />
+               <view><text class="iconfont icon-bofang"></text>204.7万</view>
+          </view>
+      </view>
+</view>
+  

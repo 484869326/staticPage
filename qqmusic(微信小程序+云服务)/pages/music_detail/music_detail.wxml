@@ -1,0 +1,140 @@
+<view class="r_nav">
+   <view class="list">
+     <view class="iconfont icon-play-list-fill">
+     <view class="name">
+        列表
+     </view>
+     </view>
+   </view>
+     <navigator class="search" url="../search/search">
+     <view class="iconfont icon-sousuo">
+     <view class="name">
+        搜索
+     </view>
+     </view>
+   </navigator>
+</view>
+  
+<view class="navbar {{hidden?'':'top'}}">
+    <view class="navbar_item" style="margin-top:{{top}}">
+       <view class="navbar_href">
+          <text class="iconfont icon-slide-left" bindtap="hanleReturn"></text>
+           <text class="iconfont icon-shouye" bindtap="hanleIndex"></text> 
+       </view>
+       <view class="navbar_title" hidden="{{hidden}}">{{Detail.name}}</view>
+    </view> 
+</view>
+<view class="content">
+         <view class="content_item" style="margin-top:{{top}}">
+         <view class="content_title">
+            {{Detail.name}}
+         </view>
+         </view>
+         <view class="content_author">
+             {{Detail.author}}
+         </view>
+         <view class="controller">
+         <view class="last_song">
+          <text class="iconfont icon-slide-left" bindtap="last"></text>
+         </view>
+            <view class="play">
+               <image class="" src="{{Detail.src}}" mode="widthFix"/>
+               <view bindtap="play" class="iconfont {{state?'icon-24gf-pauseCircle':'icon-24gf-playCircle'}}"></view>           
+            </view>
+           <view class="next_song">
+          <text class="iconfont icon-slide-right" bindtap="last"></text>
+           </view>
+         </view>
+<scroll-view class="lyric" scroll-y="true">
+<block wx:for="{{Detail.value}}">
+   <text class="{{currentIndex?'active':''}}" >
+      {{item.c}}
+   </text>
+</block>
+</scroll-view>   
+</view>
+<view class="recommend">
+    <view class="recommend_wrap">
+         <view class="recommend_title">
+        猜你喜欢听
+    </view>
+    </view>
+      <view class="recommend_list" wx:for="{{newList}}" wx:key="id" bindtap="handleDetail" data-id="{{item.id}}">
+         <view class="recommend_list_left">
+              <image class="" src="{{item.src}}" mode="widthFix"  />
+         </view>
+           
+            <view class="recommend_list_center">
+                <view class="recommend_list_title">
+                  
+                    {{item.name}}
+                </view>
+                 <view class="recommend_plain">
+                 {{item.author}}
+                </view>  
+            </view>
+              <view class="recommend_list_right">
+                  <text class="iconfont icon-slide-right"></text>
+              </view>
+                
+      </view>
+</view>
+<view class="Total">
+    <view class="Total_wrap">
+         <view class="Total_title">
+        大家都在听
+    </view>
+    </view>
+    <scroll-view class="Total_list" scroll-x="true">
+        <view  class="Total_list_content" wx:for="{{TotalsongSheet}}" wx:key="id">
+            <view class="Total_list_image">
+        <image class="" src="{{item.cover}}" mode="widthFix"/>
+            </view>
+         <view class="title">
+            {{item.title}}
+         </view>
+           
+        </view>
+    </scroll-view>  
+</view>
+<view> 
+</view>
+
+<view class="comment">
+    <view class="comment_wrap">
+         <view class="comment_title">
+        精美评论
+    </view>
+    </view>
+    <view class="comment_list"> 
+       <view class="comment_head">
+          <image class="" src="https://game.gtimg.cn/images/yxzj/img201606/heroimg/167/167.jpg" mode="widthFix"/> 
+       </view>
+       <view class="comment_user">
+          <view class="comment_name">
+             早睡
+          </view>
+            <view class="comment_time">
+               07-09 00:08
+            </view>
+              
+       </view>
+         <view class="comment_numeber">
+            2.8万<text class="iconfont icon-dianzan"></text>
+         </view>
+    </view>
+    <view class="comC">
+    <view class="hidden">
+    </view>
+       <view class="comment_content">
+         真好听
+      </view>
+    </view>
+      <view class="more_comment">
+         查看更多热门评论<text class="iconfont icon-slide-right"></text>   
+      </view>
+        
+      
+        
+</view>
+  

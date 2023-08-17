@@ -1,0 +1,9 @@
+<view class="navbar">
+    <view class="navbar_item" style="margin-top:{{top}}">
+       <view class="navbar_href">
+          <text class="iconfont icon-slide-left" bindtap="hanleReturn"></text>
+           <text class="iconfont icon-shouye" bindtap="hanleIndex"></text> 
+       </view>
+       <view class="navbar_title">QQ音乐</view>
+    </view> 
+</view>

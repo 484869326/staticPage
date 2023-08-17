@@ -1,0 +1,44 @@
+<view class="tabbar">
+    <view class="tabbar_recommend {{num==0?'active':''}}" bindtap="change" data-index="0">
+    推荐 
+</view>
+<view class="tabbar_recommend {{num==1?'active':''}}" bindtap="change" data-index="1">
+    MV
+</view>
+</view>
+<swiper class="content" current="{{num}}" bindchange="left">
+  <swiper-item class="recommend_list" >
+    <view class="recommend_item" wx:for="{{recomend}}">
+          <image class="" src="{{item.src}}" mode="widthFix"  />
+          <view class="recommend_message">
+            <text class="iconfont icon-bofang"></text>
+             {{item.cnt}}
+              <text class="time">{{item.time}}</text>
+          </view>
+          <view class="recommend_plain">
+              {{item.title}}
+          </view>
+    </view>
+ 
+  </swiper-item>
+     <swiper-item class="recommend_list" >
+  <scroll-view class="recommend_list_scroll" scroll-y="true" bindscrolltolower="reachBottom">
+      <view class="recommend_item" wx:for="{{video}}">
+          <image class="" src="{{item.src}}" mode="widthFix"  />
+          <view class="recommend_message">
+            <text class="iconfont icon-bofang"></text>
+              {{item.cnt}}
+              <text class="time">{{item.time}}</text>
+          </view>
+          <view class="recommend_plain">
+              {{item.title}}
+          </view>
+    </view>
+  </scroll-view>
+    
+  </swiper-item>
+</swiper>
+  
+  
+  
+  

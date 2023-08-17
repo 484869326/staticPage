@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .user_message {
+            width: 100%;
+            height: 130px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .user_message_left {
+            float: left;
+            width: 940px;
+            height: 130px;
+            margin-left: 35px;
+            padding-top: 10px;
+            border-right: 1px solid #eee;
+            box-sizing: border-box;
+        }
+
+        .user_message_left>ul {
+            list-style: none;
+        }
+
+        .user_message_left>ul>li {
+            float: left;
+            padding-right: 20px;
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        .user_message_right {
+            position: relative;
+            width: 350px;
+            float: left;
+            margin-top: 24px;
+            margin-left: 35px;
+        }
+
+        .user_message_name {
+            position: absolute;
+            top: 2px;
+            left: 110px;
+        }
+
+        .user_message_name>p:first-child {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .user_message_detail>img {
+            border-radius: 50%;
+            /* float: left; */
+        }
+
+        .user_message_name>.guanzhu {
+            display: inline-block;
+            width: 88px;
+            height: 36px;
+            margin-top: 10px;
+            line-height: 36px;
+            color: #444;
+            background: #ffe300;
+            border: 1px solid #ffe300;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+        }
+        .user_message_name>.xiahua{
+            display: inline-block;
+            width: 24px;
+            height: 36px;
+            border-radius: 4px;
+            border: 1px solid #666;
+            cursor: pointer;
+        }
+        .user_message_name>.sixin {
+            display: inline-block;
+            font-size: 14px;
+            width: 88px;
+            height: 36px;
+            line-height: 36px;
+            color: #666;
+            background: #fff;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <div id="head">
+        <div class="nav">
+            <div class="logo">
+                <img src="img/logo.svg">
+            </div>
+            <div class="nav_list">
+                <ul class="nav_content">
+                    <li>
+                        <a href="" style="font-weight: 600;">首页</a>
+                        <ul>
+                            <li><a href="">站酷首页</a></li>
+                            <li><a href="">我的首页</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">发现
+                            <span></span>
+                        </a>
+                        <div class="nav_center">
+                            <ul class="nav_left">
+                                <li><a href="">精选</a></li>
+                                <li><a href="">平面</a></li>
+                                <li><a href="">UI</a></li>
+                                <li><a href="">网页</a></li>
+                                <li><a href="">插图</a></li>
+                                <li><a href="">动漫</a></li>
+                                <li><a href="">摄影</a></li>
+                                <li><a href="">空间</a></li>
+                                <li><a href="">工业/产品</a></li>
+                                <li><a href="">三维</a></li>
+                                <li><a href="">影视</a></li>
+                                <li><a href="">手工艺</a></li>
+                                <li><a href="">纯艺术</a></li>
+                                <li><a href="">服装</a></li>
+                                <li><a href="">其他</a></li>
+                            </ul>
+                            <div class="nav_right">
+                                <div class="nav_right_top">
+                                    <a href=""
+                                        style="font-size: 20px; font-weight: 500;line-height: 28px; padding: 25px 0px ; ">
+                                        <img src="img/discover-cate-jingxuan-hover.svg" alt="" width="28px"
+                                            height="28px" style="vertical-align: middle;">
+                                        <span>精选</span>
+                                    </a>
+                                    <div class="nav_right_right">
+                                        <a href="">
+                                            <img src="img/icon-header-discover-designer.svg" alt="">
+                                            <span>设计师</span>
+                                        </a>
+                                        <a href="">
+                                            <img src="img/icon-header-discover-focus.svg" alt="">
+                                            <span>榜单</span>
+                                        </a>
+                                        <a href="">
+                                            <img src="img/icon-header-discover-favorite.svg" alt="">
+                                            <span>收藏夹</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="nav_right_bottom">
+                                    <ul>
+                                        <li><a href="">运营设计</a></li>
+                                        <li><a href="">包装</a></li>
+                                        <li><a href="">动画/影视</a></li>
+                                        <li><a href="">人像摄影</a></li>
+                                        <li><a href="">商业插画</a></li>
+                                        <li><a href="">电商</a></li>
+                                        <li><a href="">APP界面</a></li>
+                                        <li><a href="">艺术插画</a></li>
+                                        <li><a href="">家装设计</a></li>
+                                        <li><a href="">海报</a></li>
+                                        <li><a href="">文章</a></li>
+                                    </ul>
+                                    <div class="nav_right_right">
+                                        <div style="position: relative;margin-bottom: 15px;">
+                                            <span
+                                                style="position: absolute;left: 0; top: 0px; font-size: 12px;background-color: rgba(0, 0, 0, .5);line-height: 20px;padding: 0px 10px; border-radius: 4px; color: white;">学习视频</span>
+                                            <img src="img/4ca76130382f1101c4264663cb41.jpg" alt="" width="168px">
+                                            <p style="position: absolute; bottom:  -15px; font-size: 12px;">原创盲盒潮玩</p>
+                                        </div>
+                                        <div style="position: relative;margin-bottom: 15px;">
+                                            <span style="position: absolute;
+										left: 0; 
+										top: 0px;
+										 font-size: 12px;
+										 background-color: rgba(0, 0, 0, .5);
+										 line-height: 20px;
+										 padding: 0px 10px;
+										  border-radius: 4px; color: white;">
+                                                正版</span>
+                                            <img src="img/1707613b240e1101c426464b6ee8.jpg" alt="" width="168px">
+                                            <p style="position: absolute; bottom:  -15px; font-size: 12px;">站酷学习</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="">职位</a>
+                        <ul>
+                            <li><a href="">职位</a></li>
+                            <li><a href="">公司</a></li>
+                            <li><a href="">+发布职位</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">活动
+                            <span></span>
+                        </a>
+                        <ul>
+                            <li><a href="">设计大赛<span></span></a></li>
+                            <li><a href="">专题策划</a></li>
+                            <li><a href="">线上活动</a></li>
+                            <li><a href="">线下活动</a></li>
+                            <li><a href="">互动投票</a></li>
+                            <li><a href="">学习音频</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">正版素材</a>
+                        <ul>
+                            <li><a href="">图片</a></li>
+                            <li><a href="">视频</a></li>
+                            <li><a href="">字体</a></li>
+                            <li><a href="">音乐</a></li>
+                            <li><a href="">创意专题</a></li>
+                            <li><a href="">我要供图</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">课程</a>
+                        <ul>
+                            <li><a href="">会员专区<img src="img/sale-price.svg" alt=""
+                                        style="margin-left: 5px; vertical-align: middle;"></a></li>
+                            <li><a href="">平面视觉</a></li>
+                            <li><a href="">绘画插画</a></li>
+                            <li><a href="">电商设计</a></li>
+                            <li><a href="">UI设计</a></li>
+                            <li><a href="">商业摄影</a></li>
+                            <li><a href="">全部课程</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="">版权保护
+                            <span></span>
+                        </a>
+                        <ul>
+                            <li><a href="">著作权登记</a></li>
+                            <li><a href="">区块链存证</a></li>
+                        </ul>
+                    </li>
+                    <li><a href=""><span></span></a>
+
+                        <ul>
+                            <li><a href="">设计师</a></li>
+                            <li><a href="">榜单</a>
+                                <span></span>
+                            </li>
+                            <li><a href="">站酷APP</a></li>
+                            <li><a href="">站酷字库</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="search">
+                <span></span>
+            </div>
+            <div class="upload">
+                <span></span>
+                <ul>
+                    <li>上传作品</li>
+                    <li>写文章</li>
+                    <li>我的创作</li>
+                </ul>
+            </div>
+            <div class="user_login">
+                <ul>
+                    <li><a href="">登录</a>
+                        <span></span>
+                        <a href="">注册</a>
+                        <ul>
+
+                            <li><span style="color: red;">登录/注册</span>后，可享受：</li>
+                            <li>分享你的作品</li>
+                            <li>评论你的想法</li>
+                            <li>收藏海量灵感</li>
+                            <li>
+                                <a href="">登录</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="contain_show" style="background-color: #ffffff;">
+        <!-- 广告图片 -->
+        <div class="same  advbottom" style="margin-top: 0px;">
+            <a href=""><img src="img/detail0.jpg" alt=""></a>
+            <a href=""><img src="img/detail1.jpg" alt=""></a>
+        </div>
+        <div class="user_message">
+         
+        </div>
+        <div class="detail_img same">
+           
+        </div>
+    </div>
+    <script>
+        var user_message=document.getElementsByClassName("user_message")[0];
+        var detail_img=document.getElementsByClassName("detail_img")[0];
+        var locationid=window.location.search;
+        var id=locationid.slice(locationid.indexOf("=")+1,locationid.length);
+        $.ajax(
+            {
+                "url":"zhanku.json",
+                "type":"get",
+                success:function(result){
+                   for(item in result.card)
+                   {
+                      if(item==id){
+                          var new_list=document.createElement('div');
+                          new_list.innerHTML="    <div class='same'><div class='user_message_left'><h2 style='font-weight: 400;margin-bottom: 15px;display: inline-block;margin-right: 10px;'>"+result.card[item].card_info_title+"</h2><img src='img/fire.svg' alt=''><p style='margin-bottom: 15px;color: #bbb;font-size: 14px;'>"+result.card[item].time+"发布</p><ul><li>原创作品</li><li>/</li><li>工业产品</li><li>/</li><li>玩具</li></ul> <div style='float: right;margin-right: 20px;'> <span class='iconfont icon-eye icon_type'></span> <span class='icon_type_text'>"+result.card[item].statistics_view+"</span> <span style='color: #f2f2f2;display: inline-block;padding: 0px 20px;'>|</span> <span class='iconfont icon-pinglun icon_type'></span> <span class='icon_type_text'>"+result.card[item].statistics_comment+"</span> <span style='color: #f2f2f2;display: inline-block;padding: 0px 20px;'>|</span> <span class='iconfont icon-dianzan icon_type'>"+result.card[item].statistics_tuijian+"</span> <span class='icon_type_text'></span> </div> </div> <div class='user_message_right'> <div class='user_message_detail'> <img src='"+result.card[item].user_avatar_src+"' alt=''> </div> <div class='user_message_name'> <p>"+result.card[item].user_avatar+"</p> <p style='font-size:12px;color:#bbb;'>北京|概念设计师</p> <a href='' class='guanzhu'>关注</a> <a href='' class='xiahua'> <img src='img/icon-shixin-up.svg' alt=''> </a> <a href='' class='sixin'>私信</a> </div> </div> </div>";
+                          user_message.appendChild(new_list);
+                          var new_img=document.createElement('div');
+                          new_img.innerHTML=" <img src='"+result.card[item].detail_src+"' >";
+                          detail_img.appendChild(new_img);
+                      }
+                   }
+                }
+            }
+        )
+    </script>
+</body>
+
+</html>

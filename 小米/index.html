@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport"
+			content="width=device-width,user-scalable=1,initial-scale=no,maximum-scale=1.0,minimum-scale=1.0">
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue-router.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/icon.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+	<body>
+		<div id="app">
+			<router-view></router-view>
+			<div id="footer">
+				<router-link v-for="(v,i) in footer" :to="v.path" v-bind:key="i"><span
+						:class="v.class"></span>{{v.name}}</router-link>
+			</div>
+		</div>
+		<template id="recommend">
+			<div class="content">
+				<div class="swiper_wrap">
+					<div class="swiper">
+						<a href="">
+							<img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bfe161ddaffae008b2dc95aa80866448.jpg?thumb=1&w=720&h=360" />
+						</a>
+						<a href="">
+							<img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/56ef9618a7cf7a13853fece1b051e7d4.png?thumb=1&w=720&h=360" />
+						</a>
+						<a href="">
+							<img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a4ad5e7823be3723d527e093a604d66d.jpg?thumb=1&w=720&h=3600" />
+						</a>
+					</div>
+					<div class="swiper_radius">
+						<ul class="swiper_radius_list">
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+				<div class="nav_bar">
+					<ul>
+						<li v-for="(v,i) in nav_bar">
+							<img :src="v.nav_bar_src">
+						</li>
+					</ul>
+				</div>
+				<div class="content_wrap">
+					<div class="recommend_wrap">
+						<div class="recommend_wrap_left">
+							<img src="img/index/recommend/recommend_wrap_left.webp">
+						</div>
+						<div class="recommend_wrap_right">
+							<img src="img/index/recommend/recommend_wrap_right1.webp">
+							<img src="img/index/recommend/recommend_wrap_right2.webp">
+						</div>
+						<img src="img/index/recommend/爆款.webp">
+					</div>
+				</div>
+				<div class="recommend_list">
+					<ul>
+						<li v-for="(v,i) in recommend_list">
+							<img :src="v.imgSrc">
+							<p>{{v.name}}</p>
+							<p>{{v.plain}}</p>
+							<p>{{v.price}}</p>
+							<a href="">立即购买</a>
+						</li>
+					</ul>
+					<div class="recommend_list_more">
+						更多小米手机产品 >
+					</div>
+					<div class="bg"></div>
+					<img src="img/index/recommend/小米电视.webp">
+					<div class="recommend_list_more">
+						更多小米电视产品 >
+					</div>
+					<div class="bg"></div>
+					<img src="img/index/recommend/小米笔记本.webp">
+					<ul>
+						<li v-for="(v,i) in notebook">
+							<img :src="v.imgSrc">
+							<p>{{v.name}}</p>
+							<p>{{v.plain}}</p>
+							<p>{{v.price}}</p>
+							<a href="">立即购买</a>
+						</li>
+					</ul>
+					<div class="recommend_list_more">
+						更多小米笔记本产品 >
+					</div>
+					<div class="bg"></div>
+
+					<img src="img/index/recommend/米家家电.webp">
+					<div class="recommend_list_more">
+						更多米家家电产品 >
+					</div>
+					<div class="bg"></div>
+					<img src="img/index/recommend/米家智能.webp">
+					<div class="recommend_list_more">
+						更多米家智能产品 >
+					</div>
+					<div class="bg"></div>
+				</div>
+				<div class="recommend_img_wrap">
+					<img :src="v.imgSrc" v-for="(v,i) in recommend_img_wrap">
+				</div>
+				<div class="bg"></div>
+				<img src="img/index/recommend/换新.webp" width="100%" />
+			</div>
+		</template>
+		<template id="ai">
+			<div>智能</div>
+		</template>
+		<template id="tv">
+			<div>电视</div>
+		</template>
+		<template id="electrical">
+			<div>家电</div>
+		</template>
+		<template id="notebook">
+			<div>笔记本</div>
+		</template>
+		<template id="index">
+			<div id="index">
+				<div class="head_wrap">
+					<div class="head">
+						<div class="logo">
+							<img src="img/index/logo.png" />
+						</div>
+						<div class="search">
+							<span class="iconfont icon-sousuo"></span>
+							<span>搜索商品名称</span>
+						</div>
+						<div class="my">
+							<img src="img/footer/icon-user.23496a0116.png">
+						</div>
+					</div>
+					<div class="nav_wrap">
+						<div class="nav">
+							<router-link v-for="(v,i) in nav" :to="v.path" v-bind:key="i"><span>{{v.name}}</span>
+							</router-link>
+							<span class="iconfont icon-icon_arrow_down"></span>
+						</div>
+					</div>
+				</div>
+				<router-view></router-view>
+			</div>
+		</template>
+		<template id="category">
+			<div id="category">
+				<div class="search_wrap">
+					<div class="search">
+						<span class="iconfont icon-sousuo"></span>
+						<span>搜索商品名称</span>
+					</div>
+				</div>
+				<div class="category_wrap">
+					<div class="category_wrap_left">
+						<ul>
+							<li v-for="(v,i) in categoryname" @click="changeCategory(i)"><span
+									:class="{active:v.flag}"></span>
+									<span class="categoryname">{{v.name}}</span>
+									</li>
+						</ul>
+					</div>
+					<div class="category_wrap_right">
+						<img src="img/index/category/catetory_recommend.png" >
+						<div class="best_recommend">
+							<h5>精选推荐</h5>
+							<a href="" v-for="(v,i) in best_recommend">
+								<img :src="v.imgSrc" >
+								<div class="best_recommend_content">
+									<p>{{v.name}}</p>
+									<p>{{v.price}}</p>
+								</div>
+							</a>
+							<ul class="best_recommend_list">
+								<li v-for="(v,i) in best_recommend_list">
+									<a href="">
+										<img :src="v.imgSrc" >
+										<p>{{v.text}}</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="miradius">
+			<div id="">
+				米圈
+			</div>
+		</template>
+		<template id="car">
+			<div id="car">
+				<div class="car_head">
+					<span class="return_link"></span>
+					<span class="car_head_title">购物车</span>
+					<span class="search_link iconfont icon-sousuo"></span>
+				</div>
+				<div class="login_tips">
+					<span>登陆后享受更多优惠</span>
+					<a href="https://account.xiaomi.com/fe/service/login/phone?_loginType=ticket&_loginSign=ticket&_bal=true&_locale=zh_CN&sid=mi_eshopm_go&qs=%253Fcallback%253Dhttps%25253A%25252F%25252Fm.mi.com%25252Fv1%25252Fauthorize%25252Fsso_callback%25253Ffollowup%25253Dhttps%2525253A%2525252F%2525252Fm.mi.com%2525252Fcart%252526sign%25253DMzg3MzdjZjNkMWJhZDBmMjc0OTU4ZGEzMTQzYTRmM2ZhYjJiOWJmNw%25252C%25252C%2526sid%253Dmi_eshopm_go%2526_bal%253Dtrue%2526_locale%253Dzh_CN%2526_loginSign%253Dticket%2526_loginType%253Dticket&callback=https%3A%2F%2Fm.mi.com%2Fv1%2Fauthorize%2Fsso_callback%3Ffollowup%3Dhttps%253A%252F%252Fm.mi.com%252Fcart%26sign%3DMzg3MzdjZjNkMWJhZDBmMjc0OTU4ZGEzMTQzYTRmM2ZhYjJiOWJmNw%2C%2C&_sign=n9EdF5QhJfDiZrMHlvDuC1uF6DQ%3D&serviceParam=%7B%22checkSafePhone%22%3Afalse%2C%22checkSafeAddress%22%3Afalse%2C%22lsrp_score%22%3A0.0%7D&showActiveX=false&theme=&needTheme=false&bizDeviceType=">去登录  ></a>
+				</div>
+				<div class="car_list">
+					<span class="car_list_none"></span>
+					<span>购物车还是空的</span>
+					<a href="index.html">去逛逛</a>
+				</div>
+				<div class="car_list_recommend">
+					<img src="img/index/shopping/none_recommend.png" >
+					<ul>
+						<li v-for="(v,i) in car_list_recommend">
+							<img :src="v.imgSrc" >
+							<p>{{v.name}}</p>
+							<p>{{v.price}}</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</template>
+		<template id="my">
+			<div id="my">
+			 <div class="my_head">
+			 	<a href=""> <img src="img/index/my/avatar.png" >
+				登录/注册
+				</a>
+			 </div>
+			 <div class="order_list_wrap">
+			 	<div class="order_list">
+			 		<span>我的订单</span>
+					<a href="">全部订单 ></a>
+			 	</div>
+				<div class="order_list_content">
+					<ul>
+						<li>
+							<a href="">
+								<img src="img/index/my/order_list_content01.png" >
+								<p>代付款</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/index/my/order_list_content02.png" >
+								<p>待收货</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<img src="img/index/my/order_list_content03.png" >
+								<p>退换修</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="bg"></div>
+			 </div>
+			 <div class="my_item">
+			 	<ul>
+			 		<li>
+						<a href="">
+						<div class="my_item_logo">
+							<img src="img/index/my/my_item1.png" >
+						</div>
+						<p>会员中心</p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+						<div class="my_item_logo">
+							<img src="img/index/my/my_item2.png" >
+						</div>
+						<p>我的优惠</p>
+						</a>
+						<div class="bg"></div>
+					</li>
+					<li>
+						<a href="">
+						<div class="my_item_logo">
+							<img src="img/index/my/my_item3.png" >
+						</div>
+						<p>服务中心</p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+						<div class="my_item_logo">
+							<img src="img/index/my/my_item4.png" >
+						</div>
+						<p>小米之家</p>
+						</a>
+						<div class="bg"></div>
+					</li>
+					<li>
+						<a href="">
+						<div class="my_item_logo">
+							<img src="img/index/my/my_item5.png" >
+						</div>
+						<p>我的F码</p>
+						</a>
+					</li>
+					<li>
+						<a href="">
+						<div class="my_item_logo">
+							<img src="img/index/my/my_item6.png" >
+						</div>
+						<p>礼物码兑换</p>
+						</a>
+						<div class="bg"></div>
+					</li>
+					<li>
+						<a href="">
+						<div class="my_item_logo">
+							<img src="img/index/my/my_item7.png" >
+						</div>
+						<p>设置</p>
+						</a>
+					</li>
+			 	</ul>
+			 </div>
+			</div>
+		</template>
+		<script type="text/javascript">
+			var recommend = {
+				template: "#recommend",
+				data() {
+					return {
+						nav_bar: [{
+								nav_bar_src: "img/index/recommend/nav01.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav02.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav03.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav04.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav05.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav06.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav07.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav08.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav09.webp"
+							},
+							{
+								nav_bar_src: "img/index/recommend/nav10.webp"
+							}
+						],
+						recommend_list: [{
+								imgSrc: "img/index/recommend/recommend_list01.jpg",
+								name: "小米11 Pro",
+								plain: "1/1.12''GN2｜骁龙888",
+								price: "¥4499起"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_list02.jpg",
+								name: "MIX FOLD 小米折叠屏手机",
+								plain: "折叠大屏｜自研芯片",
+								price: "¥9999起"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_list03.jpg",
+								name: "Note 9 5G",
+								plain: "天玑 800U处理器",
+								price: "¥1199起"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_list04.jpg",
+								name: "小米10S",
+								plain: "骁龙870 | 对称式双扬立体声",
+								price: "¥2999起"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_list05.jpg",
+								name: "Note 9 Pro 5G",
+								plain: "一亿像素夜景相机",
+								price: "¥1399起"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_list06.jpg",
+								name: "小米11",
+								plain: "骁龙888 | 2K四曲面屏",
+								price: "¥3799起"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_list07.jpg",
+								name: "黑鲨4",
+								plain: "磁动力升降肩键",
+								price: "¥2499起"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_list08.jpg",
+								name: "Redmi  K40 Pro 系列o",
+								plain: "骁龙888 / E4 旗舰直屏",
+								price: "¥2499起"
+							}
+						],
+						notebook: [{
+								imgSrc: "img/index/recommend/notebook01.jpg",
+								name: "小米笔记本Pro 15",
+								plain: "大师屏 轻薄大作 | 芯怀猛虎 炸裂性能",
+								price: "¥6499起"
+							},
+							{
+								imgSrc: "img/index/recommend/notebook02.jpg",
+								name: "小米笔记本Pro 14",
+								plain: "大师屏 轻薄大作 | 芯怀猛虎 炸裂性能",
+								price: "¥5299起"
+							}
+						],
+						recommend_img_wrap: [{
+								imgSrc: "img/index/recommend/recommend_img_wrap01.webp"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_img_wrap02.webp"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_img_wrap03.webp"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_img_wrap04.webp"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_img_wrap05.webp"
+							},
+							{
+								imgSrc: "img/index/recommend/recommend_img_wrap06.webp"
+							}
+						]
+					}
+				}
+			,
+			mounted(){
+				var swiper=document.getElementsByClassName('swiper')[0];
+				var swiper_radius_list=document.getElementsByClassName('swiper_radius_list')[0].children;
+				var i=0;
+				setInterval(
+				function(){
+					if(i==3){
+						i=0;
+					}
+					for(var j=0;j<swiper_radius_list.length;j++){
+						swiper_radius_list[j].style.opacity=".2";
+					}
+					swiper.style.transform="translate("+-375*i+"px)";
+					swiper_radius_list[i].style.opacity="1";
+					i++;
+				},5000
+				)
+			}
+			}
+			var ai = {
+				template: "#ai"
+			}
+			var tv = {
+				template: "#tv"
+			}
+			var electrical = {
+				template: "#electrical"
+			}
+			var notebook = {
+				template: "#notebook"
+			}
+			var index = {
+				template: "#index",
+				data() {
+					return {
+						nav: [{
+								path: "/index/recommend",
+								name: "推荐"
+							},
+							{
+								path: "/index/ai",
+								name: "智能"
+							},
+							{
+								path: "/index/tv",
+								name: "电视"
+							},
+							{
+								path: "/index/electrical",
+								name: "家电"
+							},
+							{
+								path: "/index/notebook",
+								name: "笔记本"
+							}
+						]
+					}
+				}
+			}
+			var category = {
+				template: "#category",
+				data() {
+					return {
+						best_recommend_list:[
+							{
+							imgSrc:"img/index/category/category_best01.png",
+							text:"台灯"
+						},
+						{
+							imgSrc:"img/index/category/category_best02.png",
+							text:"口腔护理"
+						},
+						{
+							imgSrc:"img/index/category/category_best03.png",
+							text:"水壶/养生壶"
+						},
+						{
+							imgSrc:"img/index/category/category_best04.png",
+							text:"百兆版"
+						},
+						{
+							imgSrc:"img/index/category/category_best05.png",
+							text:"化妆镜"
+						},
+						{
+							imgSrc:"img/index/category/category_best06.png",
+							text:"小米手环 5"
+						},
+						{
+							imgSrc:"img/index/category/category_best07.png",
+							text:"电饭煲"
+						},
+						{
+							imgSrc:"img/index/category/category_best08.png",
+							text:"小米11"
+						},
+						{
+							imgSrc:"img/index/category/category_best09.png",
+							text:"吸顶灯"
+						},
+						{
+							imgSrc:"img/index/category/category_best10.png",
+							text:"千兆版"
+						},
+						{
+							imgSrc:"img/index/category/category_best11.png",
+							text:"眼镜"
+						},
+						{
+							imgSrc:"img/index/category/category_best12.png",
+							text:"洗碗机"
+						}
+						],
+						best_recommend:[
+							{
+								imgSrc:"img/index/category/category_best_top01.png",
+								name:"Note 9 4G",
+								price:"¥899起"
+							},
+							{
+								imgSrc:"img/index/category/category_best_top01.png",
+								name:"Note 9 4G",
+								price:"¥899起"
+							},
+							{
+								imgSrc:"img/index/category/category_best_top01.png",
+								name:"Note 9 4G",
+								price:"¥899起"
+							}
+							
+						],
+						categoryname: [{
+								flag: true,
+								name: "推荐"
+							},
+							{
+								flag: false,
+								name: "小米手机"
+							},
+							{
+								flag: false,
+								name: "Redmi手机"
+							},
+							{
+								flag: false,
+								name: "游戏手机"
+							},
+							{
+								flag: false,
+								name: "电脑平板"
+							},
+							{
+								flag: false,
+								name: "智能穿戴"
+							},
+							{
+								flag: false,
+								name: "电脑平板"
+							},
+							{
+								flag: false,
+								name: "大家电"
+							},
+							{
+								flag: false,
+								name: "小家电"
+							},
+							{
+								flag: false,
+								name: "智能家居"
+							},
+							{
+								flag: false,
+								name: "户外出行"
+							},
+							{
+								flag: false,
+								name: "日用百货"
+							},
+							{
+								flag: false,
+								name: "儿童用品"
+							},
+							{
+								flag: false,
+								name: "有品精选"
+							},
+							{
+								flag: false,
+								name: "小米服务"
+							}
+
+						]
+					}
+				},
+				methods: {
+					changeCategory: function(i) {
+						console.log(this.categoryname.length);
+						for (var j = 0; j < this.categoryname.length; j++) {
+							if (j == i) {
+								this.categoryname[i].flag = true;
+							} else {
+								this.categoryname[j].flag = false;
+							}
+						}
+					}
+				}
+			}
+			var miradius = {
+				template: "#miradius"
+			}
+			var car = {
+				template: "#car",
+				data(){
+					return {
+						car_list_recommend:[
+							{
+								imgSrc:"img/index/shopping/car_list_recommend01.jpg",
+								name:"Note 9 4G",
+								price:"¥899"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend02.jpg",
+								name:"小米智能摄像机 云台版2K",
+								price:"¥199"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend03.jpg",
+								name:"小米巨能写多彩中性笔",
+								price:"¥9.99"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend04.jpg",
+								name:"小米真无线蓝牙耳机Air2 SE",
+								price:"¥129"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend05.jpg",
+								name:"米家保温杯弹盖版",
+								price:"¥99"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend06.jpg",
+								name:"Xiaomi Watch Color 2",
+								price:"¥999"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend07.jpg",
+								name:"小米巨能写中性笔10支装",
+								price:"¥9.99"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend08.jpg",
+								name:"米家声波电动牙刷T300",
+								price:"¥99"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend09.jpg",
+								name:"小米移动电源3 20000mAh USB-C双向快充版",
+								price:"¥129"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend10.jpg",
+								name:"Note 9 Pro 5G",
+								price:"¥1399"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend11.jpg",
+								name:"Redmi AirDots 3 Pro",
+								price:"¥299"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend12.jpg",
+								name:"米家声波电动牙刷T100",
+								price:"¥39.9"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend13.jpg",
+								name:"18W USB充电器快充版",
+								price:"¥29.9"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend14.jpg",
+								name:"Redmi Note 10 Pro",
+								price:"¥1599"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend15.jpg",
+								name:"小米手环6 NFC版",
+								price:"¥279"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend16.jpg",
+								name:"小米小爱音箱 Play",
+								price:"¥99"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend17.jpg",
+								name:"米家台灯Lite",
+								price:"¥79"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend18.jpg",
+								name:"黑鲨4",
+								price:"¥2499"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend19.jpg",
+								name:"小米米家液晶小黑板",
+								price:"¥49"
+							},
+							{
+								imgSrc:"img/index/shopping/car_list_recommend20.jpg",
+								name:"米家负离子便携吹风机H100",
+								price:"¥99"
+							},
+						]
+					}
+				}
+			}
+			var my = {
+				template: "#my"
+			}
+			var router = new VueRouter({
+				routes: [{
+						path: "/index",
+						component: index,
+						children: [{
+								path: "recommend",
+								component: recommend
+							},
+							{
+								path: "ai",
+								component: ai
+							},
+							{
+								path: "tv",
+								component: tv
+							},
+							{
+								path: "electrical",
+								component: electrical
+							},
+							{
+								path: "notebook",
+								component: notebook
+							},
+							{
+								path: "/index",
+								redirect: "/index/recommend"
+							}
+						]
+					},
+					{
+						path: "/category",
+						component: category
+					},
+					{
+						path: "/miradius",
+						component: miradius
+					},
+					{
+						path: "/car",
+						component: car
+					},
+					{
+						path: "/my",
+						component: my
+					}, {
+						path: "/*",
+						redirect: "/index"
+					}
+				]
+			})
+			new Vue({
+				el: "#app",
+				data: {
+					footer: [{
+							path: "/index",
+							class: "indeximg",
+							name: "首页"
+						},
+						{
+							path: "/category",
+							class: "categoryimg",
+							name: "分类"
+						},
+						{
+							path: "/miradius",
+							class: "miradiusimg",
+							name: "米圈"
+						},
+						{
+							path: "/car",
+							class: "carimg",
+							name: "购物车"
+						},
+						{
+							path: "/my",
+							class: "myimg",
+							name: "我的"
+						}
+					]
+				},
+				router: router
+			})
+		</script>
+	</body>
+</html>

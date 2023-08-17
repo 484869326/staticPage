@@ -1,0 +1,103 @@
+@font-face {
+    font-family: "iconfont"; /* Project id 2875761 */
+    src: url('//at.alicdn.com/t/font_2875761_vk4fe6uivxb.woff2?t=1635141352053') format('woff2'),
+         url('//at.alicdn.com/t/font_2875761_vk4fe6uivxb.woff?t=1635141352053') format('woff'),
+         url('//at.alicdn.com/t/font_2875761_vk4fe6uivxb.ttf?t=1635141352053') format('truetype');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-dianzan:before {
+    content: "\e600";
+  }
+  
+  .icon-play-list-fill:before {
+    content: "\e72f";
+  }
+  
+  .icon-24gf-pauseCircle:before {
+    content: "\ea81";
+  }
+  
+  .icon-24gf-playCircle:before {
+    content: "\ea82";
+  }
+  
+  .icon-shouye:before {
+    content: "\e8c6";
+  }
+  
+  .icon-slide-left:before {
+    content: "\e636";
+  }
+  
+  .icon-gantanhao-xianxingyuankuang:before {
+    content: "\e8ec";
+  }
+  
+  .icon-wechat:before {
+    content: "\e695";
+  }
+  
+  .icon-bofang:before {
+    content: "\e87c";
+  }
+  
+  .icon-slide-right:before {
+    content: "\e635";
+  }
+  
+  .icon-sousuo:before {
+    content: "\e679";
+  }  
+.navbar{ 
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+.navbar_item,.content_item{
+    position: relative;
+    height: 80rpx;
+}
+.navbar_href{
+    position:absolute;
+    top: 50%;
+    left: 2%;
+    transform: translate(0,-50%);
+  width: 160rpx;
+  padding: 10rpx 0;
+  display: flex;
+  align-items: center;
+  background-color: white;
+box-shadow: 0px 0px 2px rgba(0, 0, 0, .4);
+    border-radius: 40rpx;
+    color: black;
+}
+.navbar_href text{
+    text-align: center;
+   flex: 1;
+}
+.navbar_href text:first-child{
+    font-size: 26rpx;
+    border-right: 1px solid #53777C;
+}
+
+.navbar_title,.content_title{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 36rpx;
+    color: black;
+    width: 310rpx;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
