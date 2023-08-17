@@ -1,0 +1,341 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+.container{
+	width: 80vw;
+	height: 80vh;
+	margin: 0 auto;
+}
+.myplayer {
+	position: relative;
+	padding-left: 0;
+}
+
+.pauseIcon {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 40px;
+	cursor: pointer;
+	color: #fff;
+	z-index: 2;
+}
+
+.myplayer .videoContent {
+	width: 100%;
+	height: 100%;
+}
+
+.myplayer .videoContent video {
+	width: 100%;
+	height: 100%;
+}
+
+.myplayer .bvc {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 0 20px 20px 20px;
+	color: hsla(0, 0%, 100%, .8);
+	transition: all 0.5s ease-in;
+}
+
+.progressVideo {
+	padding-top: 20px;
+	margin-top: -20px;
+	cursor: pointer;
+}
+
+.progressVideo .progressBar {
+	position: relative;
+	width: 100%;
+	height: 5px;
+	margin-bottom: 10px;
+	background-color: hsla(0, 0%, 100%, .2);
+	border-radius: 50px;
+}
+
+.progressRadius {
+	position: relative;
+	z-index: 1;
+	width: 10px;
+	height: 10px;
+	transform: translate(0px, -2.5px);
+	background-color: #00AEEC;
+	border-radius: 50%;
+	transition: none;
+}
+
+.progressNow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0px;
+	height: 5px;
+	border-radius: 50px 0 0 50px;
+	background-color: #00AEEC;
+	transition: none;
+}
+
+.videoTools {
+	display: flex;
+	justify-content: space-between;
+}
+
+.toolsLeft,
+.toolsRight {
+	display: flex;
+	align-items: center;
+}
+
+.toolsLeft .play span,
+.toolsLeft .pause span,
+.volumeIcon span,
+.fullScreen span {
+	font-size: 24px;
+}
+
+.fullScreen span:nth-child(2) {
+	display: none;
+}
+
+.toolsLeft .pause {
+	display: none;
+}
+
+.toolsLeft>div,
+.toolsRight>div {
+	margin: 0 25px 0 0;
+}
+
+.toolsRight>div:last-child {
+	margin: 0;
+}
+
+.playRatio {
+	position: relative;
+}
+
+.playRatio>div:nth-child(1) {
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	font-size: 12px;
+	background-color: #1B1B1B;
+	z-index: 99;
+}
+
+.playRatio>div:nth-child(1)>ul>li {
+	padding: 10px 15px;
+}
+
+.volumeControl {
+	position: relative;
+	width: 20px;
+}
+
+.playRatio:hover,
+.volumeControl:hover {
+	padding-top: 20px;
+	margin-top: -20px;
+}
+
+.volumeStatus {
+	position: absolute;
+	bottom: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 33px;
+	height: 100px;
+	font-size: 12px;
+	text-align: center;
+	background-color: rgb(32, 32, 32);
+	color: white;
+	z-index: 99;
+}
+
+.volumeBox {
+	width: 100%;
+	height: 70%;
+	/* background-color: yellow; */
+	cursor: pointer;
+}
+
+.volumeItem {
+	position: relative;
+	width: 2px;
+	margin: 0 auto;
+	height: 100%;
+	background-color: white;
+}
+
+.volumeNow {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 80%;
+	background-color: #00AEEC;
+}
+
+.borderRadius {
+	position: absolute;
+	left: -6px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	z-index: 2;
+	background-color: #00AEEC;
+}
+
+.playRatio,
+.volumeControl {
+	text-align: center;
+	cursor: pointer;
+}
+
+.playbackRate,
+.volumeStatus {
+	visibility: hidden;
+}
+
+.playRatio:hover .playbackRate,
+.volumeControl:hover .volumeStatus {
+	visibility: visible;
+}
+
+.playbackRate>ul>li:hover {
+	background-color: hsla(0, 0%, 100%, .1);
+}
+
+.ratioActice {
+	color: #02A1D9;
+}
+
+.time {
+	display: flex;
+	cursor: default !important;
+}
+
+.play:hover,
+.pause:hover,
+.time:hover,
+.playRatio:hover,
+.fullScreen:hover,
+.volumeControl:hover {
+	cursor: pointer;
+	color: #fff;
+}
+
+.volumeJingyin {
+	display: none;
+	padding-bottom: 3px;
+	font-size: 20px !important;
+}
+
+.volumeOnKey {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 95px;
+	height: 40px;
+	padding: 0 5px;
+	background-color: #FFFFFF;
+	opacity: 0;
+	border-radius: 5px;
+}
+
+.keyVolume {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.volumeOnKey .icon-jingyin {
+	font-size: 20px;
+}
+.recommendCourse:first-child{
+	margin-top: 10px;
+}
+.recommendCourse{
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+.recommendCourse:not(:last-child){
+	margin-bottom: 0;
+}
+.recommendImg{
+	width: 50%;
+}
+.recommendText{
+	width: 48%;
+}
+.recommendCourse img {
+	width: 100%;
+	border-radius: 5px;
+}
+.recommendCourse p{
+	margin-bottom: 0;
+}
+.recommendCourse .courseTitle {
+	width: 100%;
+	font-size: 16px;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.courseAuthor,.courseStatic{
+	font-size: 14px;
+	
+	color:#9499A0;
+}
+.courseAuthor span{
+	font-size: 17px;
+	font-weight: bold;
+}
+.recommendVideo{
+	width: 100%;
+}
+.goodOrBad{
+	display: flex;
+	align-items: center;
+	margin-top: 5px;
+}
+.goodOrBad p{
+	margin-bottom: 0;
+}
+.goodOrBad p span{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.goodOrBad p:not(:first-child) span:first-child{
+	font-size: 26px;
+}
+.goodOrBad p:not(:first-child) span:first-child:hover{
+	color: #00AEEC;
+}
+.newHr{
+	margin-top: 15px;
+	height: 1px;
+	background-color: rgba(0, 0, 0, 0.1);
+}
