@@ -9,6 +9,7 @@
 		<script src="js/vue-router.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" type="text/css" href="css/icon.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="css/swiper.css">
 	</head>
 	<body>
 		<div id="app">
@@ -22,22 +23,22 @@
 			<div class="content">
 				<div class="swiper_wrap">
 					<div class="swiper">
-						<a href="">
-							<img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bfe161ddaffae008b2dc95aa80866448.jpg?thumb=1&w=720&h=360" />
-						</a>
-						<a href="">
-							<img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/56ef9618a7cf7a13853fece1b051e7d4.png?thumb=1&w=720&h=360" />
-						</a>
-						<a href="">
-							<img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a4ad5e7823be3723d527e093a604d66d.jpg?thumb=1&w=720&h=3600" />
-						</a>
-					</div>
-					<div class="swiper_radius">
-						<ul class="swiper_radius_list">
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
+						<div class="swiperItem">
+							<ul class="ulist">
+								<li><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bfe161ddaffae008b2dc95aa80866448.jpg?thumb=1&w=720&h=360" alt=""></li>
+								<li><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/56ef9618a7cf7a13853fece1b051e7d4.png?thumb=1&w=720&h=360" alt=""></li>
+								<li><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a4ad5e7823be3723d527e093a604d66d.jpg?thumb=1&w=720&h=3600" alt=""></li>
+							</ul>
+						</div>
+						<div class="swiperRadius">
+							<ul class="rlist">
+								<li class="swiper_active"></li>
+								<li></li>
+								<li></li>
+							</ul>
+						</div>
+						<span class="prev"></span>
+						<span class="next"></span>
 					</div>
 				</div>
 				<div class="nav_bar">
@@ -162,16 +163,16 @@
 						<ul>
 							<li v-for="(v,i) in categoryname" @click="changeCategory(i)"><span
 									:class="{active:v.flag}"></span>
-									<span class="categoryname">{{v.name}}</span>
-									</li>
+								<span class="categoryname">{{v.name}}</span>
+							</li>
 						</ul>
 					</div>
 					<div class="category_wrap_right">
-						<img src="img/index/category/catetory_recommend.png" >
+						<img src="img/index/category/catetory_recommend.png">
 						<div class="best_recommend">
 							<h5>精选推荐</h5>
 							<a href="" v-for="(v,i) in best_recommend">
-								<img :src="v.imgSrc" >
+								<img :src="v.imgSrc">
 								<div class="best_recommend_content">
 									<p>{{v.name}}</p>
 									<p>{{v.price}}</p>
@@ -180,7 +181,7 @@
 							<ul class="best_recommend_list">
 								<li v-for="(v,i) in best_recommend_list">
 									<a href="">
-										<img :src="v.imgSrc" >
+										<img :src="v.imgSrc">
 										<p>{{v.text}}</p>
 									</a>
 								</li>
@@ -204,7 +205,9 @@
 				</div>
 				<div class="login_tips">
 					<span>登陆后享受更多优惠</span>
-					<a href="https://account.xiaomi.com/fe/service/login/phone?_loginType=ticket&_loginSign=ticket&_bal=true&_locale=zh_CN&sid=mi_eshopm_go&qs=%253Fcallback%253Dhttps%25253A%25252F%25252Fm.mi.com%25252Fv1%25252Fauthorize%25252Fsso_callback%25253Ffollowup%25253Dhttps%2525253A%2525252F%2525252Fm.mi.com%2525252Fcart%252526sign%25253DMzg3MzdjZjNkMWJhZDBmMjc0OTU4ZGEzMTQzYTRmM2ZhYjJiOWJmNw%25252C%25252C%2526sid%253Dmi_eshopm_go%2526_bal%253Dtrue%2526_locale%253Dzh_CN%2526_loginSign%253Dticket%2526_loginType%253Dticket&callback=https%3A%2F%2Fm.mi.com%2Fv1%2Fauthorize%2Fsso_callback%3Ffollowup%3Dhttps%253A%252F%252Fm.mi.com%252Fcart%26sign%3DMzg3MzdjZjNkMWJhZDBmMjc0OTU4ZGEzMTQzYTRmM2ZhYjJiOWJmNw%2C%2C&_sign=n9EdF5QhJfDiZrMHlvDuC1uF6DQ%3D&serviceParam=%7B%22checkSafePhone%22%3Afalse%2C%22checkSafeAddress%22%3Afalse%2C%22lsrp_score%22%3A0.0%7D&showActiveX=false&theme=&needTheme=false&bizDeviceType=">去登录  ></a>
+					<a
+						href="https://account.xiaomi.com/fe/service/login/phone?_loginType=ticket&_loginSign=ticket&_bal=true&_locale=zh_CN&sid=mi_eshopm_go&qs=%253Fcallback%253Dhttps%25253A%25252F%25252Fm.mi.com%25252Fv1%25252Fauthorize%25252Fsso_callback%25253Ffollowup%25253Dhttps%2525253A%2525252F%2525252Fm.mi.com%2525252Fcart%252526sign%25253DMzg3MzdjZjNkMWJhZDBmMjc0OTU4ZGEzMTQzYTRmM2ZhYjJiOWJmNw%25252C%25252C%2526sid%253Dmi_eshopm_go%2526_bal%253Dtrue%2526_locale%253Dzh_CN%2526_loginSign%253Dticket%2526_loginType%253Dticket&callback=https%3A%2F%2Fm.mi.com%2Fv1%2Fauthorize%2Fsso_callback%3Ffollowup%3Dhttps%253A%252F%252Fm.mi.com%252Fcart%26sign%3DMzg3MzdjZjNkMWJhZDBmMjc0OTU4ZGEzMTQzYTRmM2ZhYjJiOWJmNw%2C%2C&_sign=n9EdF5QhJfDiZrMHlvDuC1uF6DQ%3D&serviceParam=%7B%22checkSafePhone%22%3Afalse%2C%22checkSafeAddress%22%3Afalse%2C%22lsrp_score%22%3A0.0%7D&showActiveX=false&theme=&needTheme=false&bizDeviceType=">去登录
+						></a>
 				</div>
 				<div class="car_list">
 					<span class="car_list_none"></span>
@@ -212,10 +215,10 @@
 					<a href="index.html">去逛逛</a>
 				</div>
 				<div class="car_list_recommend">
-					<img src="img/index/shopping/none_recommend.png" >
+					<img src="img/index/shopping/none_recommend.png">
 					<ul>
 						<li v-for="(v,i) in car_list_recommend">
-							<img :src="v.imgSrc" >
+							<img :src="v.imgSrc">
 							<p>{{v.name}}</p>
 							<p>{{v.price}}</p>
 						</li>
@@ -225,103 +228,103 @@
 		</template>
 		<template id="my">
 			<div id="my">
-			 <div class="my_head">
-			 	<a href=""> <img src="img/index/my/avatar.png" >
-				登录/注册
-				</a>
-			 </div>
-			 <div class="order_list_wrap">
-			 	<div class="order_list">
-			 		<span>我的订单</span>
-					<a href="">全部订单 ></a>
-			 	</div>
-				<div class="order_list_content">
+				<div class="my_head">
+					<a href=""> <img src="img/index/my/avatar.png">
+						登录/注册
+					</a>
+				</div>
+				<div class="order_list_wrap">
+					<div class="order_list">
+						<span>我的订单</span>
+						<a href="">全部订单 ></a>
+					</div>
+					<div class="order_list_content">
+						<ul>
+							<li>
+								<a href="">
+									<img src="img/index/my/order_list_content01.png">
+									<p>代付款</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/index/my/order_list_content02.png">
+									<p>待收货</p>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="img/index/my/order_list_content03.png">
+									<p>退换修</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="bg"></div>
+				</div>
+			 <div class="my_item">
 					<ul>
 						<li>
 							<a href="">
-								<img src="img/index/my/order_list_content01.png" >
-								<p>代付款</p>
+								<div class="my_item_logo">
+									<img src="img/index/my/my_item1.png">
+								</div>
+								<p>会员中心</p>
 							</a>
 						</li>
 						<li>
 							<a href="">
-								<img src="img/index/my/order_list_content02.png" >
-								<p>待收货</p>
+								<div class="my_item_logo">
+									<img src="img/index/my/my_item2.png">
+								</div>
+								<p>我的优惠</p>
+							</a>
+							<div class="bg"></div>
+						</li>
+						<li>
+							<a href="">
+								<div class="my_item_logo">
+									<img src="img/index/my/my_item3.png">
+								</div>
+								<p>服务中心</p>
 							</a>
 						</li>
 						<li>
 							<a href="">
-								<img src="img/index/my/order_list_content03.png" >
-								<p>退换修</p>
+								<div class="my_item_logo">
+									<img src="img/index/my/my_item4.png">
+								</div>
+								<p>小米之家</p>
+							</a>
+							<div class="bg"></div>
+						</li>
+						<li>
+							<a href="">
+								<div class="my_item_logo">
+									<img src="img/index/my/my_item5.png">
+								</div>
+								<p>我的F码</p>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<div class="my_item_logo">
+									<img src="img/index/my/my_item6.png">
+								</div>
+								<p>礼物码兑换</p>
+							</a>
+							<div class="bg"></div>
+						</li>
+						<li>
+							<a href="">
+								<div class="my_item_logo">
+									<img src="img/index/my/my_item7.png">
+								</div>
+								<p>设置</p>
 							</a>
 						</li>
 					</ul>
 				</div>
-				<div class="bg"></div>
-			 </div>
-			 <div class="my_item">
-			 	<ul>
-			 		<li>
-						<a href="">
-						<div class="my_item_logo">
-							<img src="img/index/my/my_item1.png" >
-						</div>
-						<p>会员中心</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-						<div class="my_item_logo">
-							<img src="img/index/my/my_item2.png" >
-						</div>
-						<p>我的优惠</p>
-						</a>
-						<div class="bg"></div>
-					</li>
-					<li>
-						<a href="">
-						<div class="my_item_logo">
-							<img src="img/index/my/my_item3.png" >
-						</div>
-						<p>服务中心</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-						<div class="my_item_logo">
-							<img src="img/index/my/my_item4.png" >
-						</div>
-						<p>小米之家</p>
-						</a>
-						<div class="bg"></div>
-					</li>
-					<li>
-						<a href="">
-						<div class="my_item_logo">
-							<img src="img/index/my/my_item5.png" >
-						</div>
-						<p>我的F码</p>
-						</a>
-					</li>
-					<li>
-						<a href="">
-						<div class="my_item_logo">
-							<img src="img/index/my/my_item6.png" >
-						</div>
-						<p>礼物码兑换</p>
-						</a>
-						<div class="bg"></div>
-					</li>
-					<li>
-						<a href="">
-						<div class="my_item_logo">
-							<img src="img/index/my/my_item7.png" >
-						</div>
-						<p>设置</p>
-						</a>
-					</li>
-			 	</ul>
-			 </div>
 			</div>
 		</template>
 		<script type="text/javascript">
@@ -442,26 +445,10 @@
 							}
 						]
 					}
+				},
+				mounted() {
+					
 				}
-			,
-			mounted(){
-				var swiper=document.getElementsByClassName('swiper')[0];
-				var swiper_radius_list=document.getElementsByClassName('swiper_radius_list')[0].children;
-				var i=0;
-				setInterval(
-				function(){
-					if(i==3){
-						i=0;
-					}
-					for(var j=0;j<swiper_radius_list.length;j++){
-						swiper_radius_list[j].style.opacity=".2";
-					}
-					swiper.style.transform="translate("+-375*i+"px)";
-					swiper_radius_list[i].style.opacity="1";
-					i++;
-				},5000
-				)
-			}
 			}
 			var ai = {
 				template: "#ai"
@@ -507,73 +494,71 @@
 				template: "#category",
 				data() {
 					return {
-						best_recommend_list:[
-							{
-							imgSrc:"img/index/category/category_best01.png",
-							text:"台灯"
-						},
-						{
-							imgSrc:"img/index/category/category_best02.png",
-							text:"口腔护理"
-						},
-						{
-							imgSrc:"img/index/category/category_best03.png",
-							text:"水壶/养生壶"
-						},
-						{
-							imgSrc:"img/index/category/category_best04.png",
-							text:"百兆版"
-						},
-						{
-							imgSrc:"img/index/category/category_best05.png",
-							text:"化妆镜"
-						},
-						{
-							imgSrc:"img/index/category/category_best06.png",
-							text:"小米手环 5"
-						},
-						{
-							imgSrc:"img/index/category/category_best07.png",
-							text:"电饭煲"
-						},
-						{
-							imgSrc:"img/index/category/category_best08.png",
-							text:"小米11"
-						},
-						{
-							imgSrc:"img/index/category/category_best09.png",
-							text:"吸顶灯"
-						},
-						{
-							imgSrc:"img/index/category/category_best10.png",
-							text:"千兆版"
-						},
-						{
-							imgSrc:"img/index/category/category_best11.png",
-							text:"眼镜"
-						},
-						{
-							imgSrc:"img/index/category/category_best12.png",
-							text:"洗碗机"
-						}
-						],
-						best_recommend:[
-							{
-								imgSrc:"img/index/category/category_best_top01.png",
-								name:"Note 9 4G",
-								price:"¥899起"
+						best_recommend_list: [{
+								imgSrc: "img/index/category/category_best01.png",
+								text: "台灯"
 							},
 							{
-								imgSrc:"img/index/category/category_best_top01.png",
-								name:"Note 9 4G",
-								price:"¥899起"
+								imgSrc: "img/index/category/category_best02.png",
+								text: "口腔护理"
 							},
 							{
-								imgSrc:"img/index/category/category_best_top01.png",
-								name:"Note 9 4G",
-								price:"¥899起"
+								imgSrc: "img/index/category/category_best03.png",
+								text: "水壶/养生壶"
+							},
+							{
+								imgSrc: "img/index/category/category_best04.png",
+								text: "百兆版"
+							},
+							{
+								imgSrc: "img/index/category/category_best05.png",
+								text: "化妆镜"
+							},
+							{
+								imgSrc: "img/index/category/category_best06.png",
+								text: "小米手环 5"
+							},
+							{
+								imgSrc: "img/index/category/category_best07.png",
+								text: "电饭煲"
+							},
+							{
+								imgSrc: "img/index/category/category_best08.png",
+								text: "小米11"
+							},
+							{
+								imgSrc: "img/index/category/category_best09.png",
+								text: "吸顶灯"
+							},
+							{
+								imgSrc: "img/index/category/category_best10.png",
+								text: "千兆版"
+							},
+							{
+								imgSrc: "img/index/category/category_best11.png",
+								text: "眼镜"
+							},
+							{
+								imgSrc: "img/index/category/category_best12.png",
+								text: "洗碗机"
 							}
-							
+						],
+						best_recommend: [{
+								imgSrc: "img/index/category/category_best_top01.png",
+								name: "Note 9 4G",
+								price: "¥899起"
+							},
+							{
+								imgSrc: "img/index/category/category_best_top01.png",
+								name: "Note 9 4G",
+								price: "¥899起"
+							},
+							{
+								imgSrc: "img/index/category/category_best_top01.png",
+								name: "Note 9 4G",
+								price: "¥899起"
+							}
+
 						],
 						categoryname: [{
 								flag: true,
@@ -657,108 +642,107 @@
 			}
 			var car = {
 				template: "#car",
-				data(){
+				data() {
 					return {
-						car_list_recommend:[
-							{
-								imgSrc:"img/index/shopping/car_list_recommend01.jpg",
-								name:"Note 9 4G",
-								price:"¥899"
+						car_list_recommend: [{
+								imgSrc: "img/index/shopping/car_list_recommend01.jpg",
+								name: "Note 9 4G",
+								price: "¥899"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend02.jpg",
-								name:"小米智能摄像机 云台版2K",
-								price:"¥199"
+								imgSrc: "img/index/shopping/car_list_recommend02.jpg",
+								name: "小米智能摄像机 云台版2K",
+								price: "¥199"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend03.jpg",
-								name:"小米巨能写多彩中性笔",
-								price:"¥9.99"
+								imgSrc: "img/index/shopping/car_list_recommend03.jpg",
+								name: "小米巨能写多彩中性笔",
+								price: "¥9.99"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend04.jpg",
-								name:"小米真无线蓝牙耳机Air2 SE",
-								price:"¥129"
+								imgSrc: "img/index/shopping/car_list_recommend04.jpg",
+								name: "小米真无线蓝牙耳机Air2 SE",
+								price: "¥129"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend05.jpg",
-								name:"米家保温杯弹盖版",
-								price:"¥99"
+								imgSrc: "img/index/shopping/car_list_recommend05.jpg",
+								name: "米家保温杯弹盖版",
+								price: "¥99"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend06.jpg",
-								name:"Xiaomi Watch Color 2",
-								price:"¥999"
+								imgSrc: "img/index/shopping/car_list_recommend06.jpg",
+								name: "Xiaomi Watch Color 2",
+								price: "¥999"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend07.jpg",
-								name:"小米巨能写中性笔10支装",
-								price:"¥9.99"
+								imgSrc: "img/index/shopping/car_list_recommend07.jpg",
+								name: "小米巨能写中性笔10支装",
+								price: "¥9.99"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend08.jpg",
-								name:"米家声波电动牙刷T300",
-								price:"¥99"
+								imgSrc: "img/index/shopping/car_list_recommend08.jpg",
+								name: "米家声波电动牙刷T300",
+								price: "¥99"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend09.jpg",
-								name:"小米移动电源3 20000mAh USB-C双向快充版",
-								price:"¥129"
+								imgSrc: "img/index/shopping/car_list_recommend09.jpg",
+								name: "小米移动电源3 20000mAh USB-C双向快充版",
+								price: "¥129"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend10.jpg",
-								name:"Note 9 Pro 5G",
-								price:"¥1399"
+								imgSrc: "img/index/shopping/car_list_recommend10.jpg",
+								name: "Note 9 Pro 5G",
+								price: "¥1399"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend11.jpg",
-								name:"Redmi AirDots 3 Pro",
-								price:"¥299"
+								imgSrc: "img/index/shopping/car_list_recommend11.jpg",
+								name: "Redmi AirDots 3 Pro",
+								price: "¥299"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend12.jpg",
-								name:"米家声波电动牙刷T100",
-								price:"¥39.9"
+								imgSrc: "img/index/shopping/car_list_recommend12.jpg",
+								name: "米家声波电动牙刷T100",
+								price: "¥39.9"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend13.jpg",
-								name:"18W USB充电器快充版",
-								price:"¥29.9"
+								imgSrc: "img/index/shopping/car_list_recommend13.jpg",
+								name: "18W USB充电器快充版",
+								price: "¥29.9"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend14.jpg",
-								name:"Redmi Note 10 Pro",
-								price:"¥1599"
+								imgSrc: "img/index/shopping/car_list_recommend14.jpg",
+								name: "Redmi Note 10 Pro",
+								price: "¥1599"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend15.jpg",
-								name:"小米手环6 NFC版",
-								price:"¥279"
+								imgSrc: "img/index/shopping/car_list_recommend15.jpg",
+								name: "小米手环6 NFC版",
+								price: "¥279"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend16.jpg",
-								name:"小米小爱音箱 Play",
-								price:"¥99"
+								imgSrc: "img/index/shopping/car_list_recommend16.jpg",
+								name: "小米小爱音箱 Play",
+								price: "¥99"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend17.jpg",
-								name:"米家台灯Lite",
-								price:"¥79"
+								imgSrc: "img/index/shopping/car_list_recommend17.jpg",
+								name: "米家台灯Lite",
+								price: "¥79"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend18.jpg",
-								name:"黑鲨4",
-								price:"¥2499"
+								imgSrc: "img/index/shopping/car_list_recommend18.jpg",
+								name: "黑鲨4",
+								price: "¥2499"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend19.jpg",
-								name:"小米米家液晶小黑板",
-								price:"¥49"
+								imgSrc: "img/index/shopping/car_list_recommend19.jpg",
+								name: "小米米家液晶小黑板",
+								price: "¥49"
 							},
 							{
-								imgSrc:"img/index/shopping/car_list_recommend20.jpg",
-								name:"米家负离子便携吹风机H100",
-								price:"¥99"
+								imgSrc: "img/index/shopping/car_list_recommend20.jpg",
+								name: "米家负离子便携吹风机H100",
+								price: "¥99"
 							},
 						]
 					}
@@ -851,5 +835,6 @@
 				router: router
 			})
 		</script>
+		<script src="./js/swiper.js"></script>
 	</body>
 </html>

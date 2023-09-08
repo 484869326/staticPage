@@ -150,39 +150,7 @@ a{
 .content{
 	padding-top: 70px;
 }
-.content>.swiper_wrap{
-	width: 100%;
-	position: relative;
-	overflow-x: auto;
-	height: calc(100vw*360/720);
-}
-.swiper_radius{
-	position: absolute;
-	bottom: 4%;
-	left: 50%;
-	transform: translateX(-50%);
-}
-.swiper_radius>ul>li{
-	float: left;
-	width: 8px;
-	height: 8px;
-	background-color: white;
-	opacity: .2;
-	margin-left: 5px;
-	border-radius: 50%;
-}
-.swiper_radius>ul>li:first-child{
-	opacity: 1;
-}
-.content>.swiper_wrap>.swiper{
-	width: calc(100vw*3);
-}
-.content>.swiper_wrap>.swiper>a{
-	float: left;
-}
-.content>.swiper_wrap>.swiper>a>img{
-	width: 375px;
-}
+
 .content>.nav_bar{
 	overflow: hidden;
 }
