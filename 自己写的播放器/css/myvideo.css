@@ -11,14 +11,11 @@ ul {
 a {
 	text-decoration: none;
 }
-.container{
-	width: 80vw;
-	height: 80vh;
-	margin: 0 auto;
-}
+
 .myplayer {
 	position: relative;
-	padding-left: 0;
+	width: 1200px;
+	margin: 0 auto;
 }
 
 .pauseIcon {
@@ -54,7 +51,7 @@ a {
 	transition: all 0.5s ease-in;
 }
 
-.progressVideo {
+.progressVideo{
 	padding-top: 20px;
 	margin-top: -20px;
 	cursor: pointer;
@@ -247,12 +244,11 @@ a {
 	padding-bottom: 3px;
 	font-size: 20px !important;
 }
-
-.volumeOnKey {
+.volumeOnKey{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%,-50%);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -263,79 +259,11 @@ a {
 	opacity: 0;
 	border-radius: 5px;
 }
-
-.keyVolume {
+.keyVolume{
 	font-weight: bold;
 	font-size: 25px;
 }
 
-.volumeOnKey .icon-jingyin {
+.volumeOnKey .icon-jingyin{
 	font-size: 20px;
-}
-.recommendCourse:first-child{
-	margin-top: 10px;
-}
-.recommendCourse{
-	justify-content: space-between;
-	margin-bottom: 10px;
-}
-.recommendCourse:not(:last-child){
-	margin-bottom: 0;
-}
-.recommendImg{
-	width: 50%;
-}
-.recommendText{
-	width: 48%;
-}
-.recommendCourse img {
-	width: 100%;
-	border-radius: 5px;
-}
-.recommendCourse p{
-	margin-bottom: 0;
-}
-.recommendCourse .courseTitle {
-	width: 100%;
-	font-size: 16px;
-	-webkit-line-clamp: 2;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	text-overflow: ellipsis;
-	overflow: hidden;
-}
-.courseAuthor,.courseStatic{
-	font-size: 14px;
-	
-	color:#9499A0;
-}
-.courseAuthor span{
-	font-size: 17px;
-	font-weight: bold;
-}
-.recommendVideo{
-	width: 100%;
-}
-.goodOrBad{
-	display: flex;
-	align-items: center;
-	margin-top: 5px;
-}
-.goodOrBad p{
-	margin-bottom: 0;
-}
-.goodOrBad p span{
-	vertical-align: middle;
-	margin-right: 10px;
-}
-.goodOrBad p:not(:first-child) span:first-child{
-	font-size: 26px;
-}
-.goodOrBad p:not(:first-child) span:first-child:hover{
-	color: #00AEEC;
-}
-.newHr{
-	margin-top: 15px;
-	height: 1px;
-	background-color: rgba(0, 0, 0, 0.1);
 }

@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.swiper {
+	position: relative;
+	width: 100vw;
+}
+
+.swiperItem {
+	overflow: hidden;
+}
+
+.swiperItem>ul {
+	display: flex;
+	margin-left: -100vw;
+}
+
+.swiperItem>ul>li>img {
+	width: 100vw;
+}
+
+.swiperRadius {
+	position: absolute;
+	left: 50%;
+	bottom: 2vh;
+	transform: translateX(-50%);
+}
+
+.swiperRadius>ul {
+	display: flex;
+	width: 100%;
+}
+
+.swiperRadius>ul>li {
+	width: 8vw;
+	height: 0.48vh;
+	margin-right: 5px;
+	border-radius: 10px;
+	opacity: .7;
+	background-color: #b2b2b2;
+	cursor: pointer;
+	transition: all .1s;
+}
+
+.swiperRadius>ul>li.active {
+	opacity: 1;
+	background-color: #ff6900;
+}
+
+.prev,
+.next {
+	position: absolute;
+	width: 5vw;
+	height: 5vw;
+	top: 50%;
+	background-image: url(../images/left_arrow.svg);
+	background-size: 100%, 100%;
+	transform: translateY(-50%);
+	transition: all 0.5s ease-in;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.prev {
+	left: 1.5vw;
+}
+
+.next {
+	right: 1.5vw;
+	background-image: url(../images/right_arrow.svg);
+}
+
+.prev:hover {
+	background-image: url(../images/left_arrow_hover.svg);
+}
+
+.next:hover {
+	background-image: url(../images/right_arrow_hover.svg);
+}
