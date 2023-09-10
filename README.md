@@ -1,6 +1,6 @@
 # staticPage
 前端页面，没有后端接口。html,js,css,vue,微信小程序
-<a href="https://openai.com" target="_blank">OpenAI</a>
+[OpenAI](javascript:window.open('https://openai.com'))
 [小米界面](https://484869326.github.io/staticPage/小米/){target="_blank"}
 [王者界面](https://484869326.github.io/staticPage/王者/){target="_blank"}
 [站酷界面](https://484869326.github.io/staticPage/站酷/){target="_blank"}
